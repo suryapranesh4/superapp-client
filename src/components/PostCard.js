@@ -5,7 +5,8 @@ import moment from 'moment';
 import { AuthContext } from '../context/auth';
 import LikeButton from './LikeButton';
 import DeleteButton from './DeleteButton';
-import Icon from 'awesome-react-icons';
+import { faComment } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function PostCard({
   post: { body, createdAt, id, username, likeCount, commentCount, likes }
@@ -38,7 +39,9 @@ function PostCard({
                 <Link to={`/posts/${id}`} className="text-blue-500 mr-4">
                     <div className="flex flex-row">
                             <span className="mr-2">Comments</span>
-                            <span className="self-center mr-1"><Icon name="message-circle" size="14"/></span>
+                            <span className="self-center mr-1">
+                                <FontAwesomeIcon icon={faComment} />
+                            </span>
                             <div>{commentCount}</div>
                     </div>
                 </Link>

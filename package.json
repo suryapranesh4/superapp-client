@@ -4,9 +4,14 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.3.16",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "apollo-link-context": "^1.0.20",
     "autoprefixer": "^9.8.6",
-    "awesome-react-icons": "^1.4.8",
+    "font-awesome": "^4.7.0",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.12.4",
     "jwt-decode": "^3.1.2",
@@ -32,5 +37,5 @@
     "prebuild": "npm run build:styles",
     "prestart": "npm run build:styles"
   },
-  "proxy" : "https://mysterious-plateau-53916.herokuapp.com/"
+  "proxy": "https://mysterious-plateau-53916.herokuapp.com/"
 }

@@ -7,7 +7,8 @@ import LikeButton from '../components/LikeButton';
 import DeleteButton from '../components/DeleteButton';
 import Loader from '../components/Loader';
 import ReactTooltip from 'react-tooltip';
-import Icon from 'awesome-react-icons';
+import { faComment } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function SinglePost(props) {
     const postId = props.match.params.postId;
@@ -61,7 +62,7 @@ function SinglePost(props) {
                             <ReactTooltip />
                             <div className="flex flex-row text-blue-500 mr-5">
                                 <span className="mr-2">Comments</span>
-                                <span className="self-center mr-1"><Icon name="message-circle" size="14"/></span>
+                                <span className="self-center mr-1"><FontAwesomeIcon icon={faComment} /></span>
                                 <div className="text-blue-500">{commentCount}</div>
                             </div>
                         </div>

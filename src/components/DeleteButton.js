@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { DELETE_COMMENT_MUTATION,DELETE_POST_MUTATION,FETCH_POSTS_QUERY } from '../util/graphql'
 import { useMutation } from '@apollo/client';
-import Icon from 'awesome-react-icons';
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function DeleteButton({ postId, commentId, callback, showDelete }) {
   const mutation = commentId ? DELETE_COMMENT_MUTATION : DELETE_POST_MUTATION;
@@ -20,8 +21,8 @@ function DeleteButton({ postId, commentId, callback, showDelete }) {
                 newData,
                 },
             }});
-            if (callback) callback();
         }
+        if (callback) callback();
     }
     },
     variables: {
@@ -33,7 +34,9 @@ function DeleteButton({ postId, commentId, callback, showDelete }) {
     showDelete ?
     <div className="cursor-pointer flex flex-row" onClick={deletePostOrMutation}>
         <span className="text-red-500 mr-2">Delete</span>
-        <span className="self-center mr-1"><Icon name="trash" color="red" size="14"/></span>
+        <span className="self-center mr-1">
+            <FontAwesomeIcon icon={faTrashAlt} color="red"/>
+        </span>
     </div>
     :null
   );

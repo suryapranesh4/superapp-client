@@ -5,7 +5,6 @@ import PostCard from '../components/PostCard';
 import PostForm from '../components/PostForm';
 import Loader from '../components/Loader/index';
 import { FETCH_POSTS_QUERY } from '../util/graphql';
-import { Link } from 'react-router-dom';
 
 function Home() {
     const { user } = useContext(AuthContext);
@@ -25,13 +24,12 @@ function Home() {
                                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
                                     {
                                     posts.map((post) => (
-                                            <Link 
-                                                to={`/posts/${post.id}`} 
+                                            <div 
                                                 className="bg-white shadow-2xl rounded-2xl p-2 p-3 flex align-baseline overflow-scroll cursor-pointer" 
                                                 key={post.id}
                                             >
                                                 <PostCard post={post}/>
-                                            </Link>
+                                            </div>
                                         ))
                                     }
                                 </div>
